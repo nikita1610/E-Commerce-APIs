@@ -6,6 +6,11 @@ from models.business import *
 
 
 app =FastAPI()
+
+@app.get("/")
+def index():
+    return {"message":"Hello"}
+
 register_tortoise(
     app,
     db_url='sqlite://database.sqlite3',
