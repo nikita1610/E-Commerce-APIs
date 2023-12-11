@@ -46,15 +46,15 @@ class Product(Model):
 # user_pydanticIn will be used to create users since it allows 
 # readOnly fields same for all the others
 user_pydantic = pydantic_model_creator(User, name ="User", exclude=("is_verified",))
-user_pydanticIn = pydantic_model_creator(User, name = "UserIn", exclude_readonly = True, exclude=("is_verified", 'join_date'))
-user_pydanticOut = pydantic_model_creator(User, name = "UserOut", exclude = ("password", ))
+user_pydantic_in = pydantic_model_creator(User, name = "UserIn", exclude_readonly = True, exclude=("is_verified", 'join_date'))
+user_pydantic_out = pydantic_model_creator(User, name = "UserOut", exclude = ("password", ))
 
 business_pydantic = pydantic_model_creator(Business, name = "Business")
-business_pydanticIn = pydantic_model_creator(Business, name = "Business", exclude_readonly = True)
+business_pydantic_in = pydantic_model_creator(Business, name = "Business", exclude_readonly = True)
 
 
 product_pydantic  = pydantic_model_creator(Product, name = "Product")
-product_pydanticIn = pydantic_model_creator(Product, name = "ProductIn", 
+product_pydantic_in = pydantic_model_creator(Product, name = "ProductIn", 
                                             exclude = ("percentage_discount", "id"))
 
 
